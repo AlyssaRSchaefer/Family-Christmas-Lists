@@ -1,0 +1,52 @@
+.login-box-class {
+    display: none; /*hide by default*/
+    position: absolute;
+    z-index: 1; /*above other content*/
+    overflow-x: hidden;
+    border-radius: 20px;
+    border: 2px solid darkgoldenrod;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    background: linear-gradient(90deg, rgba(184, 135, 11, 0.823), rgba(255, 217, 0, .823));
+    text-align: center;
+}
+
+.login-content {
+    position: relative;
+    padding: 20px;
+    width: 80%;
+    font-family: 'Sacramento', cursive;
+}
+
+body {
+    background-image: url("../images/snowBackground.jpg");
+    background-size: contain;
+    background-repeat: none;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    color: goldenrod;
+    text-shadow: 1px 1px darkgoldenrod;
+    text-align: center;
+    font-size: 60px;
+    background-color: darkred;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+h3 {
+    margin: 0px;
+    padding-bottom: 10px;
+    font-family: 'Josefin Slab', serif;
+}
+
+/*
+font-family: 'Josefin Slab', serif;
+font-family: 'Questrial', sans-serif;
+font-family: 'Sacramento', cursive;
+*/

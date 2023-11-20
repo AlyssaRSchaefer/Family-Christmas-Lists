@@ -1,0 +1,37 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/login.css">
+    <script src="/static/javascript/login.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Questrial&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Schaefer Family Christmas Lists</title>
+</head>
+<body>
+    <div id="titlediv">
+        <h1>Schaefer Family Christmas Lists</h1> 
+    </div>
+
+    <button id="login-button" onclick="document.getElementById('login-box').style.display='block'">login</button>
+
+
+    <div id="login-box" class="login-box-class"> 
+        <div class="login-content">
+            <h3>login</h3>
+            <form method="POST" action="/">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+</body>
