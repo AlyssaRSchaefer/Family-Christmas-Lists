@@ -35,10 +35,15 @@ def home():
         # Process the result (replace with your logic)
         if result:
             print("Login successful!")
+            return render_template('lists.html')
         else:
             print("Login failed!")
 
     return render_template('login.html')
+
+@app.route('/Family-Christmas-Lists/templates/lists.html')
+def lists_route():
+    return render_template('lists.html')
 
 if __name__ == '__main__':
    app.run(debug=True, host='0.0.0.0', port=80)
