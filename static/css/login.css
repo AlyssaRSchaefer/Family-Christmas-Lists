@@ -1,3 +1,27 @@
+
+#navbar {
+    list-style-type: none;
+    background-color: darkred;
+    margin: 0;
+    padding: 2px 0px;
+}
+
+li {
+    display: inline;
+    color: white;
+    padding: 8px 12px;
+    
+}
+
+.navitem:hover {
+    background-color: rgb(111, 0, 0);
+}
+
+#navimage {
+    width: fit-content;
+    height: fit-content;
+}
+
 .login-box-class {
     display: none; /*hide by default*/
     position: absolute;
@@ -5,18 +29,40 @@
     overflow-x: hidden;
     border-radius: 20px;
     border: 2px solid darkgoldenrod;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
-    top: 0;
-    background: linear-gradient(90deg, rgba(184, 135, 11, 0.823), rgba(255, 217, 0, .823));
+    top: 50px;
+    background: linear-gradient(90deg, rgba(184, 135, 11, 0.95), rgba(255, 217, 0, .95));
     text-align: center;
 }
 
 .login-content {
-    position: relative;
-    padding: 20px;
-    width: 80%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: 'Sacramento', cursive;
+    font-size: 30px;
+}
+
+#login-button {
+    font-size: 30px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 3px solid white;
+    cursor: pointer;
+    background-color: darkred;
+    color: white;
+    font-family: 'Josefin Slab', serif;
+}
+
+#login-button:hover {
+    background-color: rgb(111, 0, 0);
 }
 
 body {
@@ -43,8 +89,30 @@ h3 {
     margin: 0px;
     padding-bottom: 10px;
     font-family: 'Josefin Slab', serif;
+    font-size: 50px;
+    padding-bottom: 20px;
 }
 
+#close-login-button, #submit-button{
+    color: white;
+    cursor: pointer;
+    background-color: darkred;
+    font-size: 15px;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Josefin Slab', serif;
+}
+
+#close-login-button {
+    position: absolute;
+    top: -90px;
+    right: -105px;
+}
+
+#close-login-button:hover, #submit-button:hover {
+    background-color: rgb(111, 0, 0);
+}
 /*
 font-family: 'Josefin Slab', serif;
 font-family: 'Questrial', sans-serif;
