@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/lists.css">
-    <script src="/static/javascript/lists.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Questrial&family=Sacramento&display=swap" rel="stylesheet">
@@ -12,31 +11,43 @@
     <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
 </head>
 <body>
+    <div id="navbar">
+        <ul>
+            <li><a href='/'>Home</a></li>
+            <li>Lists</li>
+            <li><a href='/'>Logout</a></li>
+        </ul>
+    </div>
     <h1>Christmas Lists</h1>
     <center>
     <div id="row1" class="row">
-        <button id="button1-1" class="namebutton">Alyssa</button>
-        <button id="button1-2" class="namebutton">Rachel</button>
-        <button id="button1-3" class="namebutton">Uncle Tom</button>
-        <button id="button1-4" class="namebutton">Sherri</button>
+        <button id="button1-1" class="namebutton">Alex</button>
+        <button id="button1-2" class="namebutton">Sam</button>
+        <button id="button1-3" class="namebutton">Grandma</button>
+        <button id="button1-4" class="namebutton">Grandpa</button><br>
     </div>
     <div id="row2" class="row">
         <button id="button2-1" class="namebutton">Stacey</button>
         <button id="button2-2" class="namebutton">Steve</button>
-        <button id="button2-3" class="namebutton">Samantha</button>
-        <button id="button2-4" class="namebutton">Alex</button>
+        <button id="button2-3" class="namebutton">Abby</button><br>
     </div>
     <div id="row3" class="row">
-        <button id="button3-1" class="namebutton">Abby</button>
-        <button id="button3-2" class="namebutton">Grandma</button>
-        <button id="button3-3" class="namebutton">Grandpa</button>
-        <button id="button3-4" class="namebutton">Dan</button>
+        <button id="button3-1" class="namebutton">Tom</button>
+        <button id="button3-2" class="namebutton">Sherri</button>
+        <button id="button3-3" class="namebutton" onclick="location.href='alyssa'">Alyssa</button>
+        <button id="button3-4" class="namebutton">Rachel</button><br>
     </div>
     <div id="row4" class="row">
-        
+        <button id="button4-1" class="namebutton">Jen</button>
+        <button id="button4-2" class="namebutton">Dan</button>
+        <button id="button4-3" class="namebutton">Danny Jr</button><br>
     </div>
     <div id="row5" class="row">
-        
+        <button id="button5-1" class="namebutton">Brian</button>
+        <button id="button5-2" class="namebutton">Rachael</button>
+        <button id="button5-3" class="namebutton">Annalise</button>
+        <button id="button5-4" class="namebutton">Zippy</button><br>
     </div>
     </center>
+    <script src="/static/javascript/lists.js"></script>
 </body>

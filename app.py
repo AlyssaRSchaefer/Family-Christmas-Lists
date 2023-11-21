@@ -45,5 +45,9 @@ def home():
 def lists_route():
     return render_template('lists.html')
 
+@app.route('/Family-Christmas-Lists/templates/alyssa.html')
+def alyssa_route():
+    return render_template('alyssa.html')
+
 if __name__ == '__main__':
    app.run(debug=True, host='0.0.0.0', port=80)
