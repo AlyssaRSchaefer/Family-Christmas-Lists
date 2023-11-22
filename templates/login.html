@@ -34,13 +34,12 @@
             <h3>LOGIN</h3>
             <form method="POST" action="/" id="userinfo">
                 <label for="username">Username :</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" oninput="getUser()" required>
                 <br>
                 <label for="password">Password :</label>
                 <input type="password" id="password" name="password" required>
                 <br>
                 <input type="submit" value="submit" id="submit-button">
-            </form>
         </div>
     </div>
 

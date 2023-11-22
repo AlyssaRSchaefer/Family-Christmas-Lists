@@ -1,53 +1,59 @@
 from flask import Flask, send_file, render_template, request, redirect, session, send_from_directory
-import pymysql
+import pickle
 
-app = Flask(__name__, static_url_path='/static')
-# Database configuration
-db_config = {
-    'host': '127.0.0.1',     
-    'user': 'root',
-    'password': 'password',
-    'database': 'christmas',
-}
+app = Flask(__name__)
 
-# Create a connection to the database
-conn = pymysql.connect(**db_config)
+#initialize currentUser
+currentUser = "guest"
 
-# Function to execute SQL queries
-def execute_query(query, params=None):
-    with conn.cursor() as cursor:
-        cursor.execute(query, params)
-        result = cursor.fetchall()
-    return result
 
+#This brings the user to the next
+#page if their info is found in the users dictionary
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        # Get form data
+        # Get form data for username and password
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # Example query
-        query = "SELECT * FROM users WHERE name = %s AND password = %s;"
-        params = (username, password)
-        result = execute_query(query, params)
+        # Open the serialized user info file
+        f = open("User.info", 'rb')
+        UserInfo = pickle.load(f)
 
-        # Process the result (replace with your logic)
-        if result:
-            print("Login successful!")
+        #check if the dictionary contains a key-value
+        #pair of this username and password
+        if UserInfo[username] == password:
+            #change the currentUser variable
+            currentUser = username #update currentUser on login
+            #if the login info exists, direct the user to lists page
             return render_template('lists.html')
         else:
             print("Login failed!")
 
     return render_template('login.html')
 
-@app.route('/Family-Christmas-Lists/templates/lists.html')
-def lists_route():
+@app.route('/lists.html')
+def lists():
+    if request.method == 'POST': 
+        #when a list putton is clicked
+        #get button name with json
+        buttonName = request.json.get('button_name')
+
+        #open list file and find the list for that person
+        f = open('Christmas.lists', 'rb')
+        Lists = pickle.load(f)
+        List = Lists[buttonName]
+        f.close()
+
+        #send the list back to 
+        return render_template("list.html", ListData=List)
+
+
     return render_template('lists.html')
 
-@app.route('/Family-Christmas-Lists/templates/alyssa.html')
-def alyssa_route():
-    return render_template('alyssa.html')
+@app.route('/list')
+def list():
+    return render_template('list.html')
 
 if __name__ == '__main__':
    app.run(debug=True, host='0.0.0.0', port=80)

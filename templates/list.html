@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/list.css">
+    <script src="/static/javascript/list.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Questrial&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Alyssa's Christmas List</title>
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+</head>
+<body>
+    <h1 id='heading'></h1>
+    <table>
+        <form>
+            <tr>
+                <img id="checkbox1">
+                <div id="item1"></div>
+                <button id="remove1" class="remove">Remove</button>
+            </tr>
+            <tr>
+                <img id="checkbox2">
+                <div id="item2"></div>
+                <button id="remove2" class="remove">Remove</button>
+            </tr>
+            <tr>
+                <img id="checkbox3">
+                <div id="item3"></div>
+                <button id="remove3" class="remove">Remove</button>
+            </tr>
+            <tr>
+                <img id="checkbox4">
+                <div id="item4"></div>
+                <button id="remove4" class="remove">Remove</button>
+            </tr>
+            <tr>
+                <img id="checkbox5">
+                <div id="item5"></div>
+                <button id="remove5" class="remove">Remove</button>
+            </tr>
+        </form>
+    </table>
+    <form id="addToYourList">
+        <img id="checkbox1">
+        <input type="text">
+        <input type="button" value="Add Item" id="additem">
+    </form>
+    <script>
+        {% if ListData %}
+            var List = {{ ListData|tojson }};
+        {% else %}
+            console.log("null list");
+        {% endif %}
+    </script>
+</body>
