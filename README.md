@@ -1,4 +1,2 @@
 # Family-Christmas-Lists
-2023 Schaefer family Christmas lists project
-
-Gen Z's attempt to modernize the Schaefer family's ancestoral Christmas list software.
+2023 | Gen Z marches Schaefer Family ancestoral Christmas list software to modernity.
