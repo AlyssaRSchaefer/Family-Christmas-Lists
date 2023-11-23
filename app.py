@@ -51,8 +51,26 @@ def lists():
 
     return render_template('lists.html')
 
-@app.route('/list')
+@app.route('/list', methods=['GET', 'POST'])
 def list():
+    if request.method == 'POST':
+        data=request.get_json()
+        username = data.get('username')
+        #when a user submits adds a new item
+        #bring it back to the server
+        newItem = request.form.get('newitem')
+        #open the file with all of the gift lists
+        with open("Christmas.lists", 'rb') as f:
+            ChristmasLists = pickle.load(f)
+
+        #update the dictionary for the correct user
+        #false means the gift has not been purchased
+        for List in ChristmasLists:
+            if List.get(username):
+                List[newItem] = 0
+        with open("User.info", "wb") as f:
+            pickle.dump(ChristmasLists, f)
+
     return render_template('list.html')
 
 if __name__ == '__main__':

@@ -3,3 +3,23 @@ h1 {
     color: darkred;
     text-align: center;
 }
+
+#additem {
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 3px solid white;
+    padding: 5px;
+}
+
+#additem:hover {
+    cursor: mouse;
+    background-color: green;
+}
+
+#iteminput {
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+}

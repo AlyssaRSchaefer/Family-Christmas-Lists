@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("heading").innerHTML = buttonName + "'s Christmas List"
 
     //get the name of the user from localStorage
-    var username = localStorage.getItem('username')
+    username = localStorage.getItem('username')
     //check if the username pressed their own button
     //They are only allowed to edit their own list.
     if (username!=buttonName){

@@ -42,16 +42,38 @@
             </tr>
         </form>
     </table>
-    <form id="addToYourList">
-        <img id="checkbox1">
-        <input type="text">
-        <input type="button" value="Add Item" id="additem">
+    <form id="addToYourList" method="POST" action="/list">
+        <center>
+            <input type="button" value="Add Item to Your List" id="additem" onclick="AskForItem()">
+        </center>
+        <center id="iteminput">
+            <label for="newitem">Enter Item: </label>
+            <input type="text" id="newitem" oninput="addToList()">
+        </center>
     </form>
     <script>
+    
+    var username = none;
+
         {% if ListData %}
             var List = {{ ListData|tojson }};
         {% else %}
             console.log("null list");
         {% endif %}
+        
+    function AskForItem(){
+        document.getElementById('iteminput').style.display='block';
+    }
+
+    function AddtoList() {
+        //send the username to the flask app.py
+        fetch('/list', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({username: username }),
+        });
+    }
     </script>
 </body>
