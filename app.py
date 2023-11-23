@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from flask import Flask, send_file, render_template, request, redirect, session, send_from_directory
 import pickle
 
@@ -56,4 +58,4 @@ def list():
     return render_template('list.html')
 
 if __name__ == '__main__':
-   app.run(debug=True, host='0.0.0.0', port=80)
+   app.run(debug=True, host='0.0.0.0', port=8080)
